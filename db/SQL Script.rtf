@@ -1,0 +1,181 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf110
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+\margl1440\margr1440\vieww25400\viewh14500\viewkind0
+\deftab720
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f0\fs30 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 CREATE TABLE Pessoa (
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Pessoa INT NOT NULL PRIMARY KEY GENERATED always AS IDENTITY (START WITH 1, increment BY 1),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_Nome VARCHAR(50),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_Endereco VARCHAR(100),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0DT_Nascimento DATE,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Telefone INT,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Celular INT,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_Profissao VARCHAR(50),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_Sexo VARCHAR(10),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_Nacionalidade VARCHAR(50),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_RG VARCHAR(12),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_CPF VARCHAR(11),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_EstadoCivil VARCHAR(10)
+\f1\fs24 \
+
+\f0\fs30 );
+\f1\fs24 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f0\fs30 \cf2 CREATE TABLE Profissional (
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Profissional INT NOT NULL PRIMARY KEY GENERATED always AS IDENTITY (START WITH 1, increment BY 1),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_Formacao VARCHAR(100),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_Especialidade VARCHAR(100),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_RegistroProfissional VARCHAR(50),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Pessoa INT,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0FOREIGN KEY (NI_Pessoa) REFERENCES Pessoa(NI_Pessoa)
+\f1\fs24 \
+
+\f0\fs30 );
+\f1\fs24 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f0\fs30 \cf2 CREATE TABLE Paciente (
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Paciente INT NOT NULL PRIMARY KEY GENERATED always AS IDENTITY (START WITH 1, increment BY 1),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Pessoa INT,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_NomePai VARCHAR(50),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_NomeMae VARCHAR(50),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_NomeResponsavel VARCHAR(50),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0VC_ParentescoResponsavel VARCHAR(50),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0FOREIGN KEY (NI_Pessoa) REFERENCES Pessoa(NI_Pessoa)
+\f1\fs24 \
+
+\f0\fs30 );
+\f1\fs24 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f0\fs30 \cf2 CREATE TABLE Consulta (
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Consulta INT NOT NULL PRIMARY KEY GENERATED always AS IDENTITY (START WITH 1, increment BY 1),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Paciente INT,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Profissional INT,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0DT_dataHora DATE,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0ND_valorTotal DOUBLE,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0FOREIGN KEY (NI_Paciente) REFERENCES Paciente(NI_Paciente),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0FOREIGN KEY (NI_Profissional) REFERENCES Profissional(NI_Profissional)
+\f1\fs24 \
+
+\f0\fs30 );\
+\
+\pard\pardeftab720\sl400\partightenfactor0
+\cf0 \outl0\strokewidth0 CREATE TABLE Consulta (
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Consulta INT NOT NULL PRIMARY KEY GENERATED always AS IDENTITY (START WITH 1, increment BY 1),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Paciente INT,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0NI_Profissional INT,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0DT_dataHora DATE,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0ND_valorTotal DOUBLE,
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0FOREIGN KEY (NI_Paciente) REFERENCES Paciente(NI_Paciente),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0FOREIGN KEY (NI_Profissional) REFERENCES Profissional(NI_Profissional)
+\f1\fs24 \
+
+\f0\fs30 );
+\f1\fs24 \cf2 \outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f0\fs30 \cf2 CREATE TABLE User_Login (
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0ID_User INT NOT NULL PRIMARY KEY GENERATED always AS IDENTITY (START WITH 1, increment BY 1),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0username VARCHAR(50),
+\f1\fs24 \
+
+\f0\fs30  \'a0\'a0\'a0\cf0 \outl0\strokewidth0 password VARCHAR(50)
+\f1\fs24 \cf2 \outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\f0\fs30 \cf2 );}

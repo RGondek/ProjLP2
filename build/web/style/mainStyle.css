@@ -1,0 +1,151 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 2, 2015, 2:56:43 PM
+    Author     : lucas
+*/
+
+*{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+a{ color: black; font-size: 12px; margin: 0 0 10px 0;}
+body{ background-color: lightgray; padding: 20px 0px; width: 100%}
+h1{ font-size: 32px; font-weight: normal; margin: 0 0 10px 0;}
+h2{ font-size: 24px; font-weight: lighter; margin: 0 0 10px 0;}
+h3{ font-size: 18.5px; font-weight: lighter; margin: 0 0 10px 0;}
+h4{ font-size: 16px; font-weight: lighter; margin: 0 0 10px 0;}
+h5{ font-size: 13.5px; font-weight: lighter; margin: 0 0 10px 0;}
+h5{ font-size: 11px; font-weight: lighter; margin: 0 0 10px 0;}
+
+nav ul li {
+    display: inline-block;
+    padding: 10px;
+}
+nav ul li a {
+    text-decoration: none;
+}
+
+#box {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#content {
+    background-color: #FFF;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.28);
+    -webkit-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.28);
+    -o-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.28);
+    -ms-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.28);
+    display: table;
+    margin: 0 auto;
+    padding: 50px 50px 40px 50px;
+    width: 960px;
+}
+
+.headerLeft{
+    float:left;
+}
+
+.headerRight{
+    float: right;
+}
+
+input{
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    margin: 5px 0 15px 0;
+    padding: 5px;
+    width: 250px;
+}
+
+.inputCheckBox{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.inputButton{
+    background-color: #FFF;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    margin: 5px 0 15px 0;
+    padding: 5px;
+    width: 100px;
+}
+
+.inputButton:hover{
+    background-color: #DCDCDC;
+}
+
+.inputSelect{
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    height: 30px;
+    margin: 5px 0 15px 0;
+    padding: 5px;
+    width: 260px;
+}
+
+.inputSelect option{
+    padding: 5px;
+}
+
+.inputSubmit{
+    background-color: #FFF;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    float: right;
+    margin: 5px 0 15px 0;
+    padding: 5px;
+    width: 100px;
+}
+
+.inputSubmit:hover{
+    background-color: #DCDCDC;
+}
+
+.sectionLogin{
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    display: table;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    -moz-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.28);
+    -webkit-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.28);
+    -o-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.28);
+    -ms-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.28);
+    margin-top:5%;
+}
+
+.sectionCenter{
+    display: table;
+    margin: 0 auto;
+}
+
+table{
+    border: 1px solid lightgray;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th{
+    border: 1px solid lightgray;
+    padding: 5px;
+    background-color: lightgray;
+}
+td{
+    border: 1px solid lightgray;
+    padding: 5px;
+}
