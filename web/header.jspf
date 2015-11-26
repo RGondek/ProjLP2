@@ -2,6 +2,9 @@
 <%@ page pageEncoding="UTF-8" %>
 <!--<link rel="stylesheet" type="text/css" href="style/mainStyle.css">-->
 <div id="content">
+    <c:if test="${user == null}">
+        <c:redirect url="/index.jsp"></c:redirect>
+    </c:if>
     <div class="headerLeft">
         <h1>Nome do sistema</h1><br />
         <h1>Clínica</h1>
