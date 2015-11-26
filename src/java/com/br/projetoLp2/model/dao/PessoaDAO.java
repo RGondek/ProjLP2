@@ -5,6 +5,7 @@
  */
 package com.br.projetoLp2.model.dao;
 
+import com.br.projetoLp2.business.PessoaNaoInseridaException;
 import com.br.projetoLp2.model.Pessoa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -55,7 +56,7 @@ public class PessoaDAO implements GenericDAO<Pessoa> {
                 System.out.println("DAO: Pessoa inserida com sucesso.");
                 res = true;
             } else {
-                System.out.println("DAO: Falha ao inserir pessoa.");
+                throw new PessoaNaoInseridaException("DAO: Pessoa não foi inserida com sucesso.");
             }
             ps.close();
         } catch (Exception e) {
